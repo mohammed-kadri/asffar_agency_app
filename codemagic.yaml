@@ -1,0 +1,9 @@
+workflows:
+  your-workflow-name:
+    # ... other configurations
+    building:
+      android:
+        sdk:
+          api: 33 # Or 34, try a version that's not 35
+          build_tools: latest # Or specify a build tools version
+    # ... rest of your codemagic.yaml
