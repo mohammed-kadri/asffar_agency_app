@@ -16,11 +16,17 @@ class AppLocalizations {
   _AppLocalizationsDelegate();
 
   Future<bool> load() async {
-    String jsonString =
-    await rootBundle.loadString('l10n/${locale.languageCode}.json');
-    Map<String, dynamic> jsonMap = json.decode(jsonString);
-    _localizedStrings = jsonMap.map((key, value) => MapEntry(key, value.toString()));
-    return true;
+    try {
+      String jsonString =
+      await rootBundle.loadString('l10n/${locale.languageCode}.json');
+      Map<String, dynamic> jsonMap = json.decode(jsonString);
+      _localizedStrings =
+          jsonMap.map((key, value) => MapEntry(key, value.toString()));
+      return true;
+    } catch (e) {
+      print("Error loading localization file: $e");
+      return false;
+    }
   }
 
   String translate(String key) {
@@ -32,7 +38,7 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
   const _AppLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) => ['en', 'fr', 'es'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => ['en', 'fr', 'ar'].contains(locale.languageCode);
 
   @override
   Future<AppLocalizations> load(Locale locale) async {
