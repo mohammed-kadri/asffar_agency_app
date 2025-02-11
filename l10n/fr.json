@@ -1,0 +1,5 @@
+{
+  "title": "Mon application géniale",
+  "greeting": "Bonjour, {name}!",
+  "welcomeMessage": "Bienvenue sur notre application."
+}
