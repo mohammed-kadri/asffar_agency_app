@@ -92,7 +92,7 @@ class _PostCardState extends State<PostCard> {
                     ),
                   ),
                 )),
-            Positioned(
+            Positioned( 
               right: 115,
               top: 105,
               child: Column(
